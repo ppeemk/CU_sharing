@@ -1,0 +1,8 @@
+type(20)
+type(11.1)
+type(5.0)
+type(1+4j)
+type(0+0j)
+type('สำเภา')
+type('28')
+type(str(123))

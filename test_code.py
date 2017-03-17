@@ -41,13 +41,13 @@ def system():
     print('ยินดีต้อนรับเข้าสู่ระบบการเรียนรู้ภาษาไพธอนภาษาไทย\n')
     user_name = input(
         'ให้ผมเรียกคุณว่าอย่างไรดีครับ :')  # ต้องนำไปเขียนฟังก์ชั่นรับชื่อ แบบกรองอักษรพิเศษ และเว้นวรรค
-    menu = read_file('สารบัญ.txt')
+    menu = read_file('C:/Users/Acer/Documents/GitHub/CU_sharing/teach_file/สารบัญ.txt')
     for i, e in enumerate(menu):
         print('{} {}'.format(i + 1, e))
-    menu_c = int(input('โปรดเลือกหัวข้อที่ท่านต้องการจะเรียน :')) - 1
-    info = read_file(menu[menu_c] + '.txt')  # return list
+    # menu_c = int(input('โปรดเลือกหัวข้อที่ท่านต้องการจะเรียน :')) - 1
+    info = read_file('C:/Users/Acer/Documents/GitHub/CU_sharing/teach_file/ชนิดของตัวแปร.txt') # return list
     ia = 0
-    answer = read_file(menu[menu_c] + '[a].txt')
+    answer = read_file('C:/Users/Acer/Documents/GitHub/CU_sharing/teach_file/ชนิดของตัวแปร[a].txt')
     # print(answer[ia])
     # print(info)
     for i, e in enumerate(info):

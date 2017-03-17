@@ -4,6 +4,7 @@ import os
 
 class Cu_pypi():
     def __init__(self):
+        # self.read_file('saraban.txt')
         self.start()
 
     def wait(self):
@@ -30,22 +31,25 @@ class Cu_pypi():
         # เมื่อเริ่มจะสั่งโปรแกรมให้ทำการหาไฟล์ในการสอน ถ้ามีจะเริ่มทำงานต่อถ้าไม่มีจะเข้า except บอกต้องดาว์นโหลดและวิธีการใช้งานโปรแกรมเบื้องต้น
         try:
             saraban = self.read_file(
-                os.path.join(os.path.abspath(os.getcwd()), 'สารบัญ.txt'))
+                os.path.join(os.path.abspath(os.getcwd()), 'teach_file', 'สารบัญ.txt'))
         except:
-            self.install_package()
+            # self.install_package()
             pass
         user_name = self.take_user_name()
-
         # ทำฟังก์ชั่นวน loop ให้ถามไฟล์ที่ต้องการเรียนหลังจากเรียนจบ
         print('โปรดเลือกหัวข้อที่ต้องการเรียน\n')
         for i, e in enumerate(saraban):
             print('{} {}'.format(i + 1, e))
         saraban_c = int(input('โปรดเลือก : ')) - 1
         teach_file = self.read_file(
-            os.path.join(os.path.abspath(os.getcwd()), 'teach_file', saraban[saraban_c]))
-        answer_file = self.read_file(
             os.path.join(os.path.abspath(os.getcwd()), 'teach_file',
-                         (saraban[saraban_c] + '[a]')))
+                         (saraban[saraban_c] + '.txt')))
+        try:
+            answer_file = self.read_file(
+                os.path.join(os.path.abspath(os.getcwd()), 'teach_file',
+                             (saraban[saraban_c] + '[a].txt')))
+        except:
+            pass
         ia = 0
 
         # ทำการเปลี่ยนอักขระพิเศษให้เป็นชื่อผู้เข้าใช้งาน
@@ -79,6 +83,8 @@ class Cu_pypi():
                 print(i)
 
 
+x = Cu_pypi()
+
 # print(os.path.join(os.path.abspath(__file__)))
 # print(os.getcwd())
-# print(os.path.join(os.path.abspath(os.getcwd()),'teach_file','สารบัญ.txt'))
+print(os.path.join(os.path.abspath(os.getcwd()), 'teach_file', ('สารบัญ' + '.txt')))

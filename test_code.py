@@ -16,14 +16,18 @@ dic = {'ข้อ1': 'คำตอบ1', 'ข้อ2': 'คำตอบ2'}
 # print(README)
 
 
-def read_file(file):
+def read_file(file,split = False):
     info = []
 
     with open(file, encoding='utf8') as f:
         for line in f:
-            s = line.strip()
-            # print(s)
-            info.append(s)
+            if split != True:
+                s = line.strip()
+                # print(s)
+                info.append(s)
+            else:
+                s = line.strip().split(',')
+                info.append(s)
 
     # print(info)
     return info
@@ -85,7 +89,20 @@ def system():
             print(i)
 
 
-system()
+x = read_file(os.path.join(os.getcwd(),'teach_file','ชนิดของตัวแปร[a].txt'),split=True)
+print(x)
+print(x[0])
+print(type(x[0][0]))
+# print(eval(str(x[0])))
+# print(x[0][1])
+# print(exec(x[0][0]))
+# print(eval(x[0][0]))
+# print(eval('type(20)'))
+# print(exec('a=20'))
+#
+# print(a)
+
+# system()
 # answer = ["type('name')",2]
 # print(eval(answer[0]))
 # x = play()

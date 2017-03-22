@@ -13,12 +13,16 @@ class Cu_pypi():
     def play(self):
         return input('>>> ')
 
-    def read_file(self, filename):
+    def read_file(self, filename, split=False):
         info = []
         with open(filename, encoding='utf8')as f:
             for line in f:
-                s = line.strip()
-                info.append(s)
+                if split != True:
+                    s = line.strip()
+                    info.append(s)
+                else:
+                    s = line.strip().split(',')
+                    info.append(s)
         return info
 
     def install_package(self, package_name):  # เขียนฟังก์ชั่นดาว์นโหลดข้อมูล textfile สอน
@@ -47,7 +51,7 @@ class Cu_pypi():
         try:
             answer_file = self.read_file(
                 os.path.join(os.path.abspath(os.getcwd()), 'teach_file',
-                             (saraban[saraban_c] + '[a].txt')))
+                             (saraban[saraban_c] + '[a].txt')), split=True)
         except:
             pass
         ia = 0
@@ -74,8 +78,11 @@ class Cu_pypi():
                     print('โปรดพิมพ์', answer_file[ia][0])
                     x = self.play()
                 else:
-                    print(exec(answer_file[ia][1]))
-                    # print(eval(answer[ia]))
+                    try:
+                        exec(answer_file[ia][1])
+                    except:
+                        pass
+                    print(eval(answer_file[ia][0]))
                     print('นั่นแหละครับ คำตอบที่เราต้องการ')
                     ia += 1
                     self.wait()
@@ -87,4 +94,4 @@ x = Cu_pypi()
 
 # print(os.path.join(os.path.abspath(__file__)))
 # print(os.getcwd())
-print(os.path.join(os.path.abspath(os.getcwd()), 'teach_file', ('สารบัญ' + '.txt')))
+# print(os.path.join(os.path.abspath(os.getcwd()), 'teach_file', ('สารบัญ' + '.txt')))

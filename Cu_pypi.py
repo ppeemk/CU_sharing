@@ -21,7 +21,7 @@ class Cu_pypi():
                     s = line.strip()
                     info.append(s)
                 else:
-                    s = line.strip().split(',')
+                    s = line.strip().split('/')
                     info.append(s)
         return info
 
@@ -70,6 +70,19 @@ class Cu_pypi():
                 i = i.replace('%p%', '')
                 print(i)
                 x = self.play()
+            elif '%cp%' in i: #compare print
+                while x != answer_file[ia][0]:
+                    print('โปรดพิมพ์', answer_file[ia][0])
+                    x = self.play()
+                else:
+                    try:
+                        exec(answer_file[ia][1])
+                    except:
+                        pass
+                    eval(answer_file[ia][0])
+                    print('นั่นแหละครับ คำตอบที่เราต้องการ')
+                    ia += 1
+                    self.wait()
             elif '%ca%' in i:  # compare answer
                 while x != answer_file[ia][0]:
                     print('โปรดพิมพ์', answer_file[ia][0])
@@ -79,7 +92,7 @@ class Cu_pypi():
                         exec(answer_file[ia][1])
                     except:
                         pass
-                    print(eval(answer_file[ia][0]))
+                    eval('print('+(answer_file[ia][0])+')')
                     print('นั่นแหละครับ คำตอบที่เราต้องการ')
                     ia += 1
                     self.wait()

@@ -21,7 +21,9 @@ class Cu_pypi():
                     s = line.strip()
                     info.append(s)
                 else:
-                    s = line.strip().split('/')
+                    s = line.split('/')
+                    for i,e in enumerate(s):
+                        s[i] = e.strip()
                     info.append(s)
         return info
 

@@ -108,16 +108,22 @@ def system():
 # x = play()
 # print(type(x))
 # print(print('hello world'))
-try:
-    eval('print('+'print("ฉัน","รัก","ไพธอน",sep= "<3")'+')')
+# try:
+#     eval('print('+'print("ฉัน","รัก","ไพธอน",sep= "<3")'+')')
 # except None:
 #     pass
 # x = ['type("x")', 2]
 # print(eval(x[0]))
 # exec('a = input("a:")')
 # print(eval('"a คือ",a'))
-eval("print('hello world')")
-eval('type(20)')
-print(type(20))
+# eval("print('hello world')")
+# eval('type(20)')
+# print(type(20))
 # b = 'type(2)'
 # eval('print('+b+')')
+# s ="print('a คือ',a)/ a = input('โปรดใส่ค่า a:')"
+# a = s.split('/')
+# for i,e in enumerate(a):
+#     a[i] = e.strip()
+#
+# print(a)

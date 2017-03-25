@@ -70,9 +70,6 @@ class Cu_pypi():
                 i = i.replace('%p%', '')
                 print(i)
                 x = self.play()
-            elif '%uo%' in i:  # user output
-                i = i.replace('%uo%', x)
-                print(i)
             elif '%ca%' in i:  # compare answer
                 while x != answer_file[ia][0]:
                     print('โปรดพิมพ์', answer_file[ia][0])

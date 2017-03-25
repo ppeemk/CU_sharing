@@ -26,7 +26,7 @@ def read_file(file,split = False):
                 # print(s)
                 info.append(s)
             else:
-                s = line.strip().split(',')
+                s = line.strip().split('/')
                 info.append(s)
 
     # print(info)
@@ -89,10 +89,10 @@ def system():
             print(i)
 
 
-x = read_file(os.path.join(os.getcwd(),'teach_file','ชนิดของตัวแปร[a].txt'),split=True)
-print(x)
-print(x[0])
-print(type(x[0][0]))
+# x = read_file(os.path.join(os.getcwd(),'teach_file','ฟังก์ชั่นพื้นฐาน[a].txt'),split=True)
+# print(x)
+# print(x[0])
+# print(type(x[0][0]))
 # print(eval(str(x[0])))
 # print(x[0][1])
 # print(exec(x[0][0]))
@@ -107,6 +107,17 @@ print(type(x[0][0]))
 # print(eval(answer[0]))
 # x = play()
 # print(type(x))
-
+# print(print('hello world'))
+try:
+    eval('print('+'print("ฉัน","รัก","ไพธอน",sep= "<3")'+')')
+# except None:
+#     pass
 # x = ['type("x")', 2]
 # print(eval(x[0]))
+# exec('a = input("a:")')
+# print(eval('"a คือ",a'))
+eval("print('hello world')")
+eval('type(20)')
+print(type(20))
+# b = 'type(2)'
+# eval('print('+b+')')

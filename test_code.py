@@ -23,10 +23,11 @@ def read_file(file,split = False):
         for line in f:
             if split != True:
                 s = line.strip()
-                # print(s)
                 info.append(s)
             else:
-                s = line.strip().split('/')
+                s = line.split('/')
+                for i, e in enumerate(s):
+                    s[i] = e.strip()
                 info.append(s)
 
     # print(info)
@@ -89,9 +90,14 @@ def system():
             print(i)
 
 
-# x = read_file(os.path.join(os.getcwd(),'teach_file','ฟังก์ชั่นพื้นฐาน[a].txt'),split=True)
-# print(x)
-# print(x[0])
+z = read_file(os.path.join(os.getcwd(),'teach_file','การเช็คเงื่อนไข[a].txt'),split=True)
+print(z)
+print(z[1])
+print(z[1][0])
+print(z[1][1])
+exec(z[1][1])
+# exec(z[1][0])
+
 # print(type(x[0][0]))
 # print(eval(str(x[0])))
 # print(x[0][1])
@@ -127,3 +133,5 @@ def system():
 #     a[i] = e.strip()
 #
 # print(a)
+# exec('x=21')
+# exec('if x==20: print("ถูก")\nelse: print("ผิด")')

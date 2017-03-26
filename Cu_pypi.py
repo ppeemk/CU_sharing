@@ -81,7 +81,7 @@ class Cu_pypi():
                         exec(answer_file[ia][1])
                     except:
                         pass
-                    eval(answer_file[ia][0])
+                    exec(answer_file[ia][0])
                     print('นั่นแหละครับ คำตอบที่เราต้องการ')
                     ia += 1
                     self.wait()
@@ -94,7 +94,7 @@ class Cu_pypi():
                         exec(answer_file[ia][1])
                     except:
                         pass
-                    eval('print('+(answer_file[ia][0])+')')
+                    exec('print('+(answer_file[ia][0])+')')
                     print('นั่นแหละครับ คำตอบที่เราต้องการ')
                     ia += 1
                     self.wait()

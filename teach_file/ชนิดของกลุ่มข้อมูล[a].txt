@@ -1,0 +1,5 @@
+type(list_ex)/list_ex = [1,2,3]
+type(b)/b = ('hi','hello',23)
+print(list(c))/c = range(5)
+print(tuple(d))/d = range(10,21)
+print(tuple(f))/f=range(1,11,2)

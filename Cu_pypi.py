@@ -22,7 +22,7 @@ class Cu_pypi():
                     info.append(s)
                 else:
                     s = line.split('/')
-                    for i,e in enumerate(s):
+                    for i, e in enumerate(s):
                         s[i] = e.strip()
                     info.append(s)
         return info
@@ -62,6 +62,18 @@ class Cu_pypi():
         for i, e in enumerate(teach_file):
             if '%n%' in e:
                 teach_file[i] = e.replace('%n%', user_name)
+        for i, e in enumerate(answer_file):
+            try:
+                for  index,info in enumerate(e):
+                    if '%n%' in info:
+                        e[index] = e[index].replace('%n%', user_name)
+                    if '%nl%' in info:
+                        e[index] = e[index].replace('%nl%', '\n')
+            except:
+                if '%n%' in e:
+                    answer_file[i] = e.replace('%n%', user_name)
+                if '%nl%' in e:
+                    answer_file[i] = e.replace('%nl%', '\n')
 
         for i in teach_file:
             if '%w%' in i:  # wait
@@ -72,11 +84,11 @@ class Cu_pypi():
                 i = i.replace('%p%', '')
                 print(i)
                 x = self.play()
-            elif '%cp%' in i: #compare print
-                while x != answer_file[ia][0]:
-                    print('โปรดพิมพ์', answer_file[ia][0])
-                    x = self.play()
-                else:
+            elif '%cp%' in i:  # compare print
+                # while x != answer_file[ia][0]:
+                #     print('โปรดพิมพ์', answer_file[ia][0])
+                #     x = self.play()
+                # else:
                     try:
                         exec(answer_file[ia][1])
                     except:
@@ -94,7 +106,7 @@ class Cu_pypi():
                         exec(answer_file[ia][1])
                     except:
                         pass
-                    exec('print('+(answer_file[ia][0])+')')
+                    exec('print(' + (answer_file[ia][0]) + ')')
                     print('นั่นแหละครับ คำตอบที่เราต้องการ')
                     ia += 1
                     self.wait()

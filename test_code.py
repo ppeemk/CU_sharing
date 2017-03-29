@@ -91,11 +91,21 @@ def system():
 
 
 z = read_file(os.path.join(os.getcwd(),'teach_file','การเช็คเงื่อนไข[a].txt'),split=True)
+# print(z)
+# print(z[1])
+# print(z[1][0])
+# print(z[1][1])
+# exec(z[1][1])
+for i,e in enumerate(z):
+    # print(i,e)
+    for index,info in enumerate(e):
+        print(index,info)
+        # print(ex)
+        if '%nl%' in info:
+            e[index] = e[index].replace('%nl%','\n')
+            # print(ex)
+
 print(z)
-print(z[1])
-print(z[1][0])
-print(z[1][1])
-exec(z[1][1])
 # exec(z[1][0])
 
 # print(type(x[0][0]))

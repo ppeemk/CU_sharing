@@ -85,14 +85,16 @@ class Cu_pypi():
                 print(i)
                 x = self.play()
             elif '%cp%' in i:  # compare print
-                # while x != answer_file[ia][0]:
-                #     print('โปรดพิมพ์', answer_file[ia][0])
-                #     x = self.play()
-                # else:
+                while x != answer_file[ia][0]:
+                    print('โปรดพิมพ์', answer_file[ia][0])
+                    x = self.play()
+                else:
                     try:
+                        # print(answer_file[ia][1])
                         exec(answer_file[ia][1])
                     except:
                         pass
+                    # print(answer_file[ia][0])
                     exec(answer_file[ia][0])
                     print('นั่นแหละครับ คำตอบที่เราต้องการ')
                     ia += 1

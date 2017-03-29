@@ -96,16 +96,16 @@ z = read_file(os.path.join(os.getcwd(),'teach_file','การเช็คเง
 # print(z[1][0])
 # print(z[1][1])
 # exec(z[1][1])
-for i,e in enumerate(z):
+# for i,e in enumerate(z):
     # print(i,e)
-    for index,info in enumerate(e):
-        print(index,info)
+    # for index,info in enumerate(e):
+        # print(index,info)
         # print(ex)
-        if '%nl%' in info:
-            e[index] = e[index].replace('%nl%','\n')
+        # if '%nl%' in info:
+        #     e[index] = e[index].replace('%nl%','\n')
             # print(ex)
 
-print(z)
+# print(z)
 # exec(z[1][0])
 
 # print(type(x[0][0]))
@@ -143,5 +143,5 @@ print(z)
 #     a[i] = e.strip()
 #
 # print(a)
-# exec('x=21')
-# exec('if x==20: print("ถูก")\nelse: print("ผิด")')
+a =  range(5)
+print(a)
